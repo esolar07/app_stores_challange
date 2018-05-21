@@ -29,7 +29,9 @@
                                         <p> <b>Store:</b>  {{ $store->name }}</p>
                                         <p> <b>Store Address:</b>  {{ $store->address }} {{$store->city}}, {{$store->state}} {{$store->zip}}</p>
                                         <p> <b>Store Telephone:</b>  {{ $store->phone }}</p>
-                                        <p> <b><a href="{{ url('store/'.$store->id) }}">Store Directions </a></b></p>
+                                        <button type="button" class="btn btn-primary">
+                                            <a href="{{ url('store/'.$store->id) }}" style="color:white;">Store Directions </a>
+                                        </button>
                                     </li>
                                 </div>
                             </div>

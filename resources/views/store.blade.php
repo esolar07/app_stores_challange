@@ -19,6 +19,9 @@
                 <div class="container">
                     <div>
                         <h1 class="text-center">{{ $store->name }}</h1>
+                        <br>
+                        <h4> {{ $store->address }} {{$store->city}}, {{$store->state}} {{$store->zip}}</h4>
+
                     </div>
                     
                     <div>
