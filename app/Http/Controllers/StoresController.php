@@ -71,4 +71,26 @@ class StoresController extends Controller
         return redirect('/stores');
 
     }
+
+
+    public function getSingleStore($id){
+        $config = $marker = array();
+
+        $store = Stores::find($id);
+        
+        $config['center'] = $store['address'] . ' ' . $store['city'] . ', ' . $store['state'];
+        $config['zoom'] = '12';
+        $config['map_height'] = '400px';
+        $config['map_width'] = '400px';
+        $this->gmap->initialize($config);
+       
+        $marker['position'] = $store['address'] . ' ' . $store['city'] . ', ' . $store['state'];
+        $marker['infowindow_content'] = $store['name'];
+        $this->gmap->add_marker($marker);
+    
+       
+        $map = $this->gmap->create_map();
+
+        return view('store')->with(['store' => $store, 'map'=> $map]);;
+    }
 }

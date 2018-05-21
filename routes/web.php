@@ -19,4 +19,6 @@ Route::get('/stores', 'StoresController@getAllStores');
 
 Route::get('/add_store', 'StoresController@showStoreForm');
 
+Route::get('/store/{id}', 'StoresController@getSingleStore');
+
 Route::post('/add_store/post', 'StoresController@addStore');
