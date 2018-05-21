@@ -15,7 +15,7 @@ class Stores extends Model
         'city',
         'state',
         'zip',
-        'phone'
+        'phone',
     ];
 
     

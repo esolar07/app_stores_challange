@@ -15,6 +15,11 @@ class StoresController extends Controller
         $this->gmap = $gmap;
     }
 
+    /**
+     * Gets all stores in DB table to display in view
+     *
+     * @return void
+     */
     public function getAllStores(){
 
         $config = $marker = array();
@@ -38,11 +43,20 @@ class StoresController extends Controller
         return view('map')->with(['stores' => $stores, 'map'=> $map]);
     }
 
-
+    /**
+     * Returns add store form view
+     *
+     * @return void
+     */
     public function showStoreForm(){
         return view('add_store');
     }
 
+    /**
+     * Add new form entry into DB table and then redirects user to all store view
+     *
+     * @return void
+     */
     public function addStore(){
 
         Stores::create([
